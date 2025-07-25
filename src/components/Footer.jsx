@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import instagram from '../assets/logo/instagram.svg'
 import facebook from '../assets/logo/facebook.svg'
 import linkedin from '../assets/logo/linkedin.svg'
-
-
 import TagzLogo from "../assets/logo/logo-mask.webp";
 import ZeptoLogo from "../assets/logo/zepto.jpg";
 import InstamartLogo from "../assets/logo/instsmart.png";
-import AmazonLogo from "../assets/logo/amazon.jpg";
-import BlinkitLogo from "../assets/logo/blinkit.jpg";
-import FlipkartLogo from "../assets/logo/flipkart.jpg";
-import DunzoLogo from "../assets/logo/dunzo.jpg";
+import AmazonLogo from "../assets/logo/amazon.webp";
+import BlinkitLogo from "../assets/logo/blinkit.webp";
+import FlipkartLogo from "../assets/logo/flipkart.webp";
+import DunzoLogo from "../assets/logo/dunzo.webp";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -27,7 +25,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
         <div className="flex flex-col items-start gap-3">
-          <img src={TagzLogo} alt="TagZ" className="w-36" />
+          <img loading="lazy" src={TagzLogo} alt="TagZ" className="w-36" />
           <p className="text-sm text-neutral-300">Snack smarter with TagZ – bold taste, no compromise.</p>
           <p className="text-xs text-neutral-500 mt-2">&copy; {new Date().getFullYear()} TagZ Foods</p>
         </div>
@@ -66,9 +64,9 @@ export default function Footer() {
 
           {/* Socials */}
           <div className="flex space-x-4 mt-5">
-            <img src={linkedin} className="w-5 h-5 hover:text-amber-400 transition cursor-pointer bg-white" alt="" />
-            <img src={facebook} className="w-5 h-5 hover:text-amber-400 transition cursor-pointer bg-white" alt="" />
-            <img src={instagram} className="w-5 h-5 hover:text-amber-400 transition cursor-pointer bg-white" alt="" />
+            <img loading="lazy" src={linkedin} className="w-5 h-5 hover:text-amber-400 transition cursor-pointer bg-white" alt="" />
+            <img loading="lazy" src={facebook} className="w-5 h-5 hover:text-amber-400 transition cursor-pointer bg-white" alt="" />
+            <img loading="lazy" src={instagram} className="w-5 h-5 hover:text-amber-400 transition cursor-pointer bg-white" alt="" />
           </div>
         </div>
 
@@ -77,7 +75,7 @@ export default function Footer() {
           <h4 className="text-lg font-semibold mb-4">Available On</h4>
           <div className="grid grid-cols-3 gap-3">
             {[ZeptoLogo, InstamartLogo, AmazonLogo, BlinkitLogo, FlipkartLogo, DunzoLogo].map((logo, idx) => (
-              <img
+              <img loading="lazy"
                 key={idx}
                 src={logo}
                 alt="Partner Logo"

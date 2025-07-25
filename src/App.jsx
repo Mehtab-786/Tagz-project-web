@@ -1,15 +1,27 @@
-// src/App.jsx
-import MainRoutes from './routes/MainRoutes';
-import { ArrowUp } from 'lucide-react';
-
+import { useDispatch } from "react-redux";
+import MainRoutes from "./routes/MainRoutes";
+import { ArrowUp } from "lucide-react";
+import { useEffect } from "react";
+import { loadProduct } from "./store/reducers/ProductSlice";
+import { getProducts } from "./data/db";
+import { loginUser } from "./store/reducers/UserSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  let data = JSON.parse(localStorage.getItem("currentUser"));
+  useEffect(() => {
+    getProducts && dispatch(loadProduct(getProducts));
+    if (data) {
+      dispatch(loginUser(data));
+    }
+  }, []);
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="w-full h-full relative overflow-x-hidden">
+    <div className="min-h-screen w-full relative overflow-x-hidden">
       <MainRoutes />
 
       <button
@@ -23,4 +35,3 @@ function App() {
 }
 
 export default App;
-

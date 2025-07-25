@@ -76,7 +76,7 @@ function ProductCard({ product, inView }) {
       whileHover={{ scale: 1.05 }}
       className="bg-transparent shadow-2xl rounded-xl p-4 flex flex-col items-center justify-between min-h-[400px] transition-all duration-300 "
     >
-      <motion.img
+      <motion.img loading="lazy"
         src={isHovered ? product.hoverImage : product.image}
         alt={product.name}
         onMouseEnter={() => setIsHovered(true)}
@@ -94,7 +94,7 @@ function ProductCard({ product, inView }) {
       </div>
       <button
         onClick={() => navigate('/products')}
-        className={`px-6 py-2 rounded-full transition-all duration-300 border`}
+        className={`px-6 py-2 rounded-full transition-all duration-300 border cursor-pointer`}
       >
         Explore
       </button>

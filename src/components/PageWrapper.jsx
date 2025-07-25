@@ -1,4 +1,3 @@
-// src/components/PageWrapper.jsx
 import { motion } from 'framer-motion';
 
 const pageVariants = {
@@ -10,7 +9,7 @@ const pageVariants = {
 const pageTransition = {
   type: 'tween',
   ease: 'easeInOut',
-  duration: 0.6,
+  duration: 0.5,
 };
 
 export default function PageWrapper({ children }) {

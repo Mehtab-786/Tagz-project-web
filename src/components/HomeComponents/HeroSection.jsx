@@ -59,7 +59,7 @@ function HeroSection() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <motion.img
+        <motion.img loading="lazy"
           src={pic7}
           alt="TAG snack"
           className="rounded-xl shadow-xl max-h-[70vh] w-auto object-contain"

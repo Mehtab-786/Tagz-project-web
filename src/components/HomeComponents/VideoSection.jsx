@@ -1,5 +1,5 @@
-import background from "../../assets/images/video-background.jpg";
-import post from "../../assets/images/shikhar.jpg";
+import background from "../../assets/images/video-background.webp";
+import post from "../../assets/images/shikhar.webp";
 import tagz from "../../assets/videos/videoplayback.mp4";
 import { motion } from "motion/react";
 
@@ -25,7 +25,7 @@ function VideoSection() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-lg sm:text-xl text-gray-500 mb-2 font-semibold max-w-2xl mx-auto dm-serif-text-regular"
+          className="text-xs sm:text-xl  text-gray-500 mb-5 font-semibold max-w-2xl mx-auto dm-serif-text-regular"
         >
           The crunch you crave, the taste you deserve — 50% less fat, 200% more
           fun!

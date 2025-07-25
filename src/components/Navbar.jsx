@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSelector } from "react-redux";
+import logo from "../assets/logo/logo-mask.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
+  const { currentUser } = useSelector((state) => state?.UserReducer);
 
   return (
     <nav className="w-full bg-[#8ABB6C] shadow-md fixed top-0 left-0 z-50">
@@ -15,24 +17,74 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ type: 'spring', stiffness: 120, damping: 14, delay: 0.1 }}
+          transition={{
+            type: "spring",
+            stiffness: 120,
+            damping: 14,
+            delay: 0.1,
+          }}
           whileHover={{ scale: 1.08 }}
-          className="text-2xl font-bold text-gray-800 cursor-pointer"
+          className="cursor-pointer"
         >
-          LabTag
+          <Link to="/">
+            <img
+              src={logo}
+              alt="TagZ Foods Logo"
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
         </motion.div>
 
         {/* Desktop Links */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ type: 'spring', stiffness: 120, damping: 14, delay: 0.2 }}
+          transition={{
+            type: "spring",
+            stiffness: 120,
+            damping: 14,
+            delay: 0.2,
+          }}
           className="hidden md:flex space-x-6 text-gray-700 text-lg"
         >
-          <Link to="/" className="hover:text-blue-600 transition font-semibold">Home</Link>
-          <Link to="/products" className="hover:text-blue-600 transition font-semibold">Products</Link>
-          <Link to="/about" className="hover:text-blue-600 transition font-semibold">About</Link>
-          <Link to="/login" className="hover:text-blue-600 transition font-semibold">Login</Link>
+          <Link to="/" className="hover:text-blue-600 transition font-semibold hover:scale-110">
+            Home
+          </Link>
+          <Link
+            to="/products"
+            className="hover:text-blue-600 transition font-semibold hover:scale-110"
+          >
+            Products
+          </Link>
+          <Link
+            to="/about"
+            className="hover:text-blue-600 transition font-semibold hover:scale-110"
+          >
+            About
+          </Link>
+          {currentUser ? (
+            <>
+              <Link
+                to="/cart"
+                className="hover:text-blue-600 transition font-semibold hover:scale-110"
+              >
+                Cart
+              </Link>
+              <Link
+                to="/profile"
+                className="hover:text-blue-600 transition font-semibold hover:scale-110"
+              >
+                Profile
+              </Link>
+            </>
+          ) : (
+            <Link
+              to="/login"
+              className="hover:text-blue-600 transition font-semibold hover:scale-110"
+            >
+              Login
+            </Link>
+          )}
         </motion.div>
 
         {/* Hamburger */}
@@ -53,13 +105,52 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "linear", }}
+            transition={{ duration: 0.2, ease: "linear" }}
             className="md:hidden px-6 pb-4 flex flex-col gap-4  text-gray-700 text-lg bg-white shadow-md"
           >
-            <Link to="/" onClick={toggleMenu} className=" hover:text-blue-600">Home</Link>
-            <Link to="/products" onClick={toggleMenu} className="hover:text-blue-600">Products</Link>
-            <Link to="/about" onClick={toggleMenu} className="hover:text-blue-600">About</Link>
-            <Link to="/login" onClick={toggleMenu} className="hover:text-blue-600">Login</Link>
+            <Link to="/" onClick={toggleMenu} className=" hover:text-blue-600">
+              Home
+            </Link>
+            <Link
+              to="/products"
+              onClick={toggleMenu}
+              className="hover:text-blue-600"
+            >
+              Products
+            </Link>
+            <Link
+              to="/about"
+              onClick={toggleMenu}
+              className="hover:text-blue-600"
+            >
+              About
+            </Link>
+            {currentUser ? (
+              <>
+                <Link
+                  to="/cart"
+                  onClick={toggleMenu}
+                  className="hover:text-blue-600"
+                >
+                  Cart
+                </Link>
+                <Link
+                  to="/profile"
+                  onClick={toggleMenu}
+                  className="hover:text-blue-600"
+                >
+                  Profile
+                </Link>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                onClick={toggleMenu}
+                className="hover:text-blue-600"
+              >
+                Login
+              </Link>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

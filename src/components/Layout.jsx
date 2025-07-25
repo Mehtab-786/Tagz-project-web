@@ -1,4 +1,3 @@
-// src/Layout.jsx
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { Outlet, useLocation } from 'react-router-dom';

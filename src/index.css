@@ -6,26 +6,11 @@
   font-style: normal;
 }
 
-.lobster-two-bold {
-  font-family: "Lobster Two", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
 .lobster-two-regular-italic {
   font-family: "Lobster Two", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
-
-.lobster-two-bold-italic {
-  font-family: "Lobster Two", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-
-
 
 .kaushan-script-regular {
   font-family: "Kaushan Script", cursive;
@@ -50,4 +35,26 @@
   font-family: "DM Serif Text", serif;
   font-weight: 400;
   font-style: italic;
+}
+
+
+.oswald-text {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #56676c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }

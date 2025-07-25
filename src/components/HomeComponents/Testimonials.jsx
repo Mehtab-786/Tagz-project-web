@@ -3,10 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { FaQuoteLeft } from "react-icons/fa";
+import { Quote } from "lucide-react";
 
 function Testimonials() {
-    const testimonials = [
+  const testimonials = [
     {
       title: "CRAZY TASTY",
       description:
@@ -56,69 +56,69 @@ function Testimonials() {
   };
   return (
     <div className="my-10 px-4 max-w-5xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-xl md:text-4xl pl-5 font-bold sm:text-center text-start mb-8 dm-serif-text-regular-italic"
-        >
-          Some Words From Our Customers
-        </motion.h1>
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          spaceBetween={20}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="w-full max-w-[1200px] px-4 py-8"
-        >
-          {testimonials.map((testimonial, idx) => (
-            <SwiperSlide key={idx} className="flex justify-center items-center">
-              <motion.div
-                custom={idx}
-                initial="hidden"
-                animate="visible"
-                variants={cardVariants}
-                className="bg-white shadow-xl px-6 py-8 rounded-2xl text-center w-full max-w-md h-[300px] flex flex-col justify-between border-2 border-transparent bg-clip-padding bg-gradient-to-r from-[#e1c02b] via-[#b8cf5b] to-[#44e2e0]"
-              >
-                <div className="text-4xl text-purple-500 mb-1">
-                  <FaQuoteLeft />
-                </div>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-xl md:text-4xl pl-5 font-bold sm:text-center text-start mb-8 dm-serif-text-regular-italic"
+      >
+        Some Words From Our Customers
+      </motion.h1>
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        spaceBetween={20}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        pagination={{ clickable: true }}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        className="w-full max-w-[1200px] px-4 py-8"
+      >
+        {testimonials.map((testimonial, idx) => (
+          <SwiperSlide key={idx} className="flex justify-center items-center">
+            <motion.div
+              custom={idx}
+              initial="hidden"
+              animate="visible"
+              variants={cardVariants}
+              className="bg-white shadow-xl px-6 py-8 rounded-2xl text-center w-[30%] sm:w-full max-w-md h-[300px] flex flex-col justify-between border-2 border-transparent bg-clip-padding bg-gradient-to-r from-[#e1c02b] via-[#b8cf5b] to-[#44e2e0]"
+            >
+              <div className="text-4xl text-purple-500 mb-1">
+                <Quote />
+              </div>
 
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                    {testimonial.title.length > 20
-                      ? testimonial.title.slice(0, 25) + "..."
-                      : testimonial.title}
-                  </h3>
-                  <p className="text-gray-700 italic leading-tight text-base px-2">
-                    “
-                    {testimonial.description.length > 200
-                      ? testimonial.description.slice(0, 200)
-                      : testimonial.description}
-                    ..<span className="text-blue-500 text-xs">more</span>”
-                  </p>
-                </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {testimonial.title.length > 20
+                    ? testimonial.title.slice(0, 25) + "..."
+                    : testimonial.title}
+                </h3>
+                <p className="text-gray-700 italic leading-tight text-base px-2">
+                  “
+                  {testimonial.description.length > 200
+                    ? testimonial.description.slice(0, 200)
+                    : testimonial.description}
+                  ..<span className="text-blue-500 text-xs">more</span>”
+                </p>
+              </div>
 
-                <div className="mt-4 font-semibold text-lg text-gray-900">
-                  — {testimonial.name}
-                </div>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-  )
+              <div className="mt-4 font-semibold text-lg text-gray-900">
+                — {testimonial.name}
+              </div>
+            </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 }
 
-export default Testimonials
+export default Testimonials;

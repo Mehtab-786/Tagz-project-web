@@ -1,0 +1,101 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "title": "Pack of 3 Gourmet Dips",
+            "price": 375,
+            "description": "When the rhythm starts to play, look for your Jivin’ Chipotle gourmet dip. Spice up your party with some fire and flavour. This dip is spicy with an unforgettable tangy twist and a smoky aftertaste is sure to start a riot of flavours in your mouth.",
+            "quantities" : 3,
+            "image": "/images/oils-packs.webp"
+        },
+        {
+            "id": "2",
+            "title": "High on Life - Hemp CookieZ",
+            "price": 160,
+            "description": "Goodness of hemp oil with melting Centre filled chocolate for sweet indulgence.",
+            "quantities" : "75g each",
+            "image": "/images/HighonLife-HempCookieZ.webp"
+        },
+        {
+            "id": "3",
+            "title": "Spice Fiesta",
+            "price": 539,
+            "description": "Spice up your snack time with mouthwatering Masala-flavored goodness, paired with chipotle dip that will tantalize your taste buds.",
+            "quantities" : 4,
+            "image": "/images/SpiceFiesta.webp"
+        },
+        {
+            "id": "4",
+            "title": "Snack Attack Combo",
+            "price": 220,
+            "description": "Classic flavor hits with a sweet after party bite for the moments of snack attack",
+            "quantities" : 4,
+            "image": "/images/SnackAttackCombo.webp"
+        },
+        {
+            "id": "5",
+            "title": "Party Slayer",
+            "price": 439,
+            "description": "Indulge your taste buds with a variety of flavors and textures that are sure to elevate any party or special occasion. Whether you're hosting a birthday bash, a family reunion, or simply enjoying a cozy evening with friends.",
+            "quantities" : 6,
+            "image": "/images/PartySlayer.webp"
+        },
+        {
+            "id": "6",
+            "title": "Chip & Dip Delight Combo",
+            "price": 399,
+            "description": "Indulge in a flavor-packed adventure. This is your ticket to a snacking experience like no other.",
+            "quantities" : 5,
+            "image": "/images/Chip&DipDelightCombo.webp"
+        },
+        {
+            "id": "7",
+            "title": "Best sellers - 5 in 1",
+            "price": 300,
+            "description": "Explore our range of flavorful popped chips with this value pack purchase",
+            "quantities" : 5,
+            "image": "/images/Bestsellers-5in1.webp"
+        },
+        {
+            "id": "8",
+            "title": "Flavor Blast",
+            "price": 180,
+            "description": "Our top 3 selling favourite flavours of popped chips for your indulgence",
+            "category": 3,
+            "image": "/images/FlavorBlast.webp"
+        },
+        {
+            "id": "9",
+            "title": "Cocktail Special Combo",
+            "price": 539,
+            "description": "Party planners looking for the indulgent experience of drinks, chips and dips? Look no further, add it to your cart and let the shenanigans begin",
+            "quantities" : 3,
+            "image": "/images/CocktailSpecialCombo.webp"
+        },
+        {
+            "id": "10",
+            "title": "Creamy Fiesta",
+            "price": 539,
+            "description": "Grab a seat, dip into the creamy goodness, and savor the ultimate snacking experience with this fantastic combination of chips and Harissa dip.",
+            "quantities" : 5,
+            "image": "/images/CreamyFiesta.webp"
+        },
+        {
+            "id": "11",
+            "title": "All in one combo",
+            "price": 469,
+            "description": "Why settle for one snack when you can have it all in our Snack Attack Bundle?",
+            "quantities" : 5,
+            "image": "/images/Allonecombo.webp"
+        },
+        {
+            "id": "12",
+            "title": "Sweet & Savoury Combo",
+            "price":410,
+            "description": "Indulge in the perfect harmony of flavors with our Crispy Sweet & Savory Combo! This delightful package includes a pack of 3 Canz, each brimming with irresistible flavours, and 2 delectable Cookiez to satisfy your sweet cravings.",
+            "quantities" : 5,
+            "image": "/images/Sweet&SavouryCombo.webp"
+        }
+    ],
+    "users": []
+}
