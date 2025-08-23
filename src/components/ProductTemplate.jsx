@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import notfound from '../assets/images/not-found.webp';
+import { notfound } from "../utils/images";
 import { addToCart } from "../store/reducers/UserSlice";
 
 function ProductTemplate({ item }) {
@@ -9,7 +9,17 @@ function ProductTemplate({ item }) {
   const dispatch = useDispatch();
 
   const addTagzCart = (item) => {
-    currentUser && dispatch(addToCart(item));
+    if (!currentUser) {
+      toast.warning("Login to add items to cart");
+      return;
+    }
+
+    try {
+      dispatch(addToCart(item));
+      toast.success("Item added to cart");
+    } catch (error) {
+      toast.error("Failed to add item to cart");
+    }
   };
 
   return (
@@ -41,11 +51,7 @@ function ProductTemplate({ item }) {
       <div className="flex items-center justify-between mt-auto">
         <p className="text-green-600 font-bold text-base">${item.price}</p>
         <button
-          onClick={() =>
-            currentUser
-              ? addTagzCart(item)
-              : toast.warning("Login to add items to cart")
-          }
+          onClick={() => addTagzCart(item)}
           className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
         >
           Add to cart

@@ -6,26 +6,13 @@
   font-style: normal;
 }
 
-.lobster-two-regular-italic {
-  font-family: "Lobster Two", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.kaushan-script-regular {
-  font-family: "Kaushan Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .rubik-wet-paint-regular {
   font-family: "Rubik Wet Paint", system-ui;
   font-weight: 400;
   font-style: normal;
 }
 
-
-.dm-serif-text-regular {
+.dm-serif-text-regular {          
   font-family: "DM Serif Text", serif;
   font-weight: 400;
   font-style: normal;
@@ -37,7 +24,6 @@
   font-style: italic;
 }
 
-
 .oswald-text {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
@@ -46,7 +32,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
   background: transparent;
 }
 
@@ -57,4 +43,8 @@
 
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -5,8 +5,6 @@ import { useEffect } from "react";
 import { loadProduct } from "./store/reducers/ProductSlice";
 import { getProducts } from "./data/db";
 import { loginUser } from "./store/reducers/UserSlice";
-import 'react-toastify/dist/ReactToastify.css';
-
 
 function App() {
   const dispatch = useDispatch();

@@ -1,13 +1,10 @@
-import background from "../../assets/images/video-background.webp";
-import post from "../../assets/images/shikhar.webp";
-import tagz from "../../assets/videos/videoplayback.mp4";
 import { motion } from "motion/react";
+import {post, tagz} from '../../utils/images.js'
 
 function VideoSection() {
   return (
     <section
-      className=" w-full bg-no-repeat bg-[center_60%] bg-contain flex items-center justify-center px-4 py-10 "
-      style={{ backgroundImage: `url(${background})` }}
+      className=" w-full  flex items-center justify-center px-4 py-10"
     >
       <div className="max-w-5xl  w-full mx-auto text-center space-y-6">
         {/* Gradient Heading */}

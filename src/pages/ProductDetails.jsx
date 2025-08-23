@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../store/reducers/UserSlice";
 import { toast } from "react-toastify";
-import notfound from "../assets/images/not-found.webp";
+import {notfound} from "../utils/images";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -17,18 +17,25 @@ function ProductDetails() {
       toast.warning("Login to add items to cart");
       return;
     }
-    dispatch(addToCart(product));
-    toast.success("Item added to cart");
+
+    try {
+      dispatch(addToCart(product));
+      toast.success("Item added to cart");
+    } catch (error) {
+      toast.error("Failed to add item to cart");
+    }
   };
 
-  if (!product) return <div className="text-center py-20">Product Not Found</div>;
+  if (!product)
+    return <div className="text-center py-20">Product Not Found</div>;
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-gray-50">
       <div className="max-w-4xl w-full flex flex-col md:flex-row gap-8 bg-white rounded-xl shadow-lg p-6">
         {/* Image Section */}
         <div className="flex-1 flex items-center justify-center">
-          <img loading="lazy"
+          <img
+            loading="lazy"
             src={product.image}
             onError={(e) => (e.currentTarget.src = notfound)}
             alt={product.title}
@@ -39,14 +46,20 @@ function ProductDetails() {
         {/* Product Details */}
         <div className="flex-1 flex flex-col justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800 mb-4">{product.title}</h1>
-            <p className="text-gray-600 text-base mb-4">{product.description}</p>
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">
+              {product.title}
+            </h1>
+            <p className="text-gray-600 text-base mb-4">
+              {product.description}
+            </p>
             {product.quantities && (
               <p className="text-sm text-gray-500 mb-2 font-medium">
                 Quantities: {product.quantities}
               </p>
             )}
-            <p className="text-lg font-bold text-green-600 mb-6">₹{product.price}</p>
+            <p className="text-lg font-bold text-green-600 mb-6">
+              ₹{product.price}
+            </p>
           </div>
 
           <button

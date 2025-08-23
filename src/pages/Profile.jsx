@@ -65,6 +65,7 @@ function Profile() {
         <form
           className="flex-1 flex flex-col justify-center items-center"
           onSubmit={handleSubmit(userUpdate)}
+          id='profile-id'
         >
           <h2 className="text-lg md:text-xl font-semibold mb-6 text-gray-800">Update Profile</h2>
 

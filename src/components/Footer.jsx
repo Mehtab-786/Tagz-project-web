@@ -1,14 +1,5 @@
-import React, { useState } from "react";
-import instagram from '../assets/logo/instagram.svg'
-import facebook from '../assets/logo/facebook.svg'
-import linkedin from '../assets/logo/linkedin.svg'
-import TagzLogo from "../assets/logo/logo-mask.webp";
-import ZeptoLogo from "../assets/logo/zepto.jpg";
-import InstamartLogo from "../assets/logo/instsmart.png";
-import AmazonLogo from "../assets/logo/amazon.webp";
-import BlinkitLogo from "../assets/logo/blinkit.webp";
-import FlipkartLogo from "../assets/logo/flipkart.webp";
-import DunzoLogo from "../assets/logo/dunzo.webp";
+import { useState } from "react";
+import {instagram, facebook, linkedin, TagzLogo, ZeptoLogo, InstamartLogo, AmazonLogo, BlinkitLogo, FlipkartLogo, DunzoLogo } from '../utils/images'
 
 export default function Footer() {
   const [email, setEmail] = useState("");

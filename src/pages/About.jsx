@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import sagar from '../assets/images/sagar-bhalotia.webp';
-import anish from '../assets/images/anish.webp';
-import businesstoday from '../assets/images/bstoday.webp';
-import economictimes from '../assets/images/economictimes.webp';
-import inc42 from '../assets/images/inc42.webp';
-import slurp from '../assets/images/slurp.webp';
-import toi from '../assets/images/timeofindia.webp';
-import sharkTank from '../assets/images/sharktankimage.webp';
-
+import {sagar ,anish ,businesstoday ,economictimes ,inc42 ,slurp ,toi ,sharkTank } from '../utils/images'
 export default function About() {
   return (
     <div className="px-4 py-12 max-w-6xl mx-auto space-y-16">
@@ -16,7 +8,7 @@ export default function About() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.5 }}
         className="text-center space-y-4"
       >
         <h1 className="text-4xl font-bold mt-10 ">About TagZ Foods</h1>

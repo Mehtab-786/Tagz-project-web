@@ -1,7 +1,9 @@
-import ProductShowcase from "../components/HomeComponents/ProductShowcase";
-import HeroSection from "../components/HomeComponents/HeroSection";
-import VideoSection from "../components/HomeComponents/VideoSection";
-import Testimonials from "../components/HomeComponents/Testimonials";
+import { lazy } from "react";
+
+const ProductShowcase = lazy(() => import( "../components/HomeComponents/ProductShowcase"));
+const HeroSection = lazy(() => import( "../components/HomeComponents/HeroSection"));
+const VideoSection = lazy(() => import( "../components/HomeComponents/VideoSection"));
+const Testimonials = lazy(() => import( "../components/HomeComponents/Testimonials"));
 function Home() {
   return (
     <div className="w-full flex flex-col">

@@ -89,7 +89,7 @@ function Testimonials() {
               initial="hidden"
               animate="visible"
               variants={cardVariants}
-              className="bg-white shadow-xl px-6 py-8 rounded-2xl text-center w-[30%] sm:w-full max-w-md h-[300px] flex flex-col justify-between border-2 border-transparent bg-clip-padding bg-gradient-to-r from-[#e1c02b] via-[#b8cf5b] to-[#44e2e0]"
+              className="bg-white shadow-xl px-6 py-8 rounded-2xl text-center w-[30%] sm:w-full max-w-md h-[300px] flex flex-col justify-between border-2 border-transparent bg-clip-padding bg-gradient-to-r from-[#dfcd7c] via-[#acbc6c] to-[#76d7d5]"
             >
               <div className="text-4xl text-purple-500 mb-1">
                 <Quote />

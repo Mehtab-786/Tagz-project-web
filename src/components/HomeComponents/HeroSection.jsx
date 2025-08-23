@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import pic7 from "../../assets/images/pic 7.jpg";
+import {pic7} from '../../utils/images'
+import { ShoppingBag } from "lucide-react";
 
 function HeroSection() {
   const fullText = "“Crunch that Hits Different — Taste the TAG!”";
@@ -19,7 +20,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <div className="w-full  min-h-[90vh] bg-gradient-to-r from-[#edc518] via-[#abc250] to-[#2dbebb] flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-10 gap-10">
+    <div className="w-full  min-h-[90vh]  bg-gradient-to-r from-[#edc518] via-[#abc250] to-[#2dbebb] flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-10 gap-10">
       {/* Text & Buttons */}
       <div className="flex-1 flex flex-col items-center justify-center text-center gap-6">
         <motion.div
@@ -38,10 +39,10 @@ function HeroSection() {
         {/* Buttons */}
         <div className="flex gap-4 mt-4 flex-wrap justify-center">
           <button
-            className="bg-white text-amber-700 font-semibold px-6 py-3 rounded-full hover:bg-amber-600 hover:text-white transition-all duration-300 shadow-md"
+            className="bg-white flex items-center gap-2 text-amber-700 font-semibold px-6 py-3 rounded-full hover:bg-amber-600 hover:text-white transition-all duration-300 shadow-md"
             onClick={() => alert("Order flow coming soon!")}
           >
-            Order Now
+            Order Now <ShoppingBag size={18} />
           </button>
           <button
             className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all duration-300 shadow-md"
@@ -59,7 +60,8 @@ function HeroSection() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <motion.img loading="lazy"
+        <motion.img
+          loading="lazy"
           src={pic7}
           alt="TAG snack"
           className="rounded-xl shadow-xl max-h-[70vh] w-auto object-contain"

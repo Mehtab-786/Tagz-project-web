@@ -45,14 +45,14 @@ export const userSlice = createSlice({
         localStorage.setItem("currentUser", JSON.stringify(state.currentUser));
       }
     },
-    addToCart: (state, action) => {
+        addToCart: (state, action) => {
       const item = action.payload;
       const idx = state.users.findIndex(
         (u) => u.email === state.currentUser.email
       );
       if (idx !== -1) {
-        const user = state.users[idx];
-        if (!user.cart) user.cart = [];
+        const user = { ...state.users[idx] };
+        user.cart = user.cart || [];
 
         const existingItem = user.cart.find((i) => i.id === item.id);
         if (existingItem) {
@@ -61,41 +61,54 @@ export const userSlice = createSlice({
           user.cart.push({ ...item, quantity: 1 });
         }
 
-        state.users[idx] = user;
-        state.currentUser = user;
-
-        localStorage.setItem("users", JSON.stringify(state.users));
-        localStorage.setItem("currentUser", JSON.stringify(state.currentUser));
+        updateUserState(state, idx, user);
       }
     },
+
     incrementQuantity: (state, action) => {
       const id = action.payload;
-      const user = state.currentUser;
-      const item = user.cart.find((item) => item.id === id);
-      if (item) {
-        item.quantity += 1;
-        localStorage.setItem("currentUser", JSON.stringify(user));
+      const idx = state.users.findIndex(
+        (u) => u.email === state.currentUser.email
+      );
+      if (idx !== -1) {
+        const user = { ...state.users[idx] };
+        const item = user.cart?.find((i) => i.id === id);
+        if (item) item.quantity += 1;
+        updateUserState(state, idx, user);
       }
-      updateLocalStorageUsers(user)
     },
+
     decrementQuantity: (state, action) => {
       const id = action.payload;
-      const user = state.currentUser;
-      const itemIndex = user.cart.findIndex((item) => item.id === id);
-      if (itemIndex !== -1) {
-        if (user.cart[itemIndex].quantity > 1) {
-          user.cart[itemIndex].quantity -= 1;
-        } else {
-          user.cart.splice(itemIndex, 1);
+      const idx = state.users.findIndex(
+        (u) => u.email === state.currentUser.email
+      );
+      if (idx !== -1) {
+        const user = { ...state.users[idx] };
+        user.cart = user.cart || [];
+
+        const itemIndex = user.cart.findIndex((i) => i.id === id);
+        if (itemIndex !== -1) {
+          if (user.cart[itemIndex].quantity > 1) {
+            user.cart[itemIndex].quantity -= 1;
+          } else {
+            user.cart.splice(itemIndex, 1);
+          }
+          updateUserState(state, idx, user);
         }
-        updateLocalStorageUsers(user)
-      }      
-    },
-    clearCart: (state) => {
-      if (state.currentUser) {
-        state.currentUser.cart = [];
       }
     },
+
+    clearCart: (state) => {
+      const idx = state.users.findIndex(
+        (u) => u.email === state.currentUser.email
+      );
+      if (idx !== -1) {
+        const user = { ...state.users[idx], cart: [] };
+        updateUserState(state, idx, user);
+      }
+    },
+
   },
 });
 
@@ -109,16 +122,16 @@ export const {
   decrementQuantity,
   clearCart,
 } = userSlice.actions;
+
 export default userSlice.reducer;
 
 
 
-const updateLocalStorageUsers = (user) => {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const index = users.findIndex((u) => u.id === user.id);
-  if (index !== -1) {
-    users[index] = user; // update the user in array
-    localStorage.setItem("users", JSON.stringify(users)); // update users array
-    localStorage.setItem("currentUser", JSON.stringify(user)); // update currentUser
-  }
+const updateUserState = (state, idx, updatedUser) => {
+  state.users[idx] = updatedUser;
+  state.currentUser = updatedUser;
+
+  localStorage.setItem("users", JSON.stringify(state.users));
+  localStorage.setItem("currentUser", JSON.stringify(updatedUser));
 };
+

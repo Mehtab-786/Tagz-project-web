@@ -13,6 +13,7 @@ export default function Layout() {
         <Outlet key={location.pathname} />
       </AnimatePresence>
       <Footer />
+
     </>
   );
 }

@@ -2,15 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
-// Primary Images
-import chipss from  '../../assets/images/chip-packets-2.jpg';
-import chipss1 from '../../assets/images/cookee.jpg';
-import chipss2 from '../../assets/images/tagxzvol.jpg';
+import {chipss  ,chipss1  ,chipss2  ,chipssHover  ,chipss1Hover  ,chipss2Hover} from '../../utils/images'
 
-// Hover/Alternate Images (Replace these with real paths)
-import chipssHover from  '../../assets/images/pic4.webp';
-import chipss1Hover from '../../assets/images/chipsdesign.png';
-import chipss2Hover from '../../assets/images/tazz.webp';
 import { useNavigate } from "react-router-dom";
 
 export default function ProductShowcase() {
@@ -76,7 +69,8 @@ function ProductCard({ product, inView }) {
       whileHover={{ scale: 1.05 }}
       className="bg-transparent shadow-2xl rounded-xl p-4 flex flex-col items-center justify-between min-h-[400px] transition-all duration-300 "
     >
-      <motion.img loading="lazy"
+      <motion.img 
+        loading="lazy"
         src={isHovered ? product.hoverImage : product.image}
         alt={product.name}
         onMouseEnter={() => setIsHovered(true)}
